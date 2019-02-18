@@ -41,7 +41,7 @@ export const locationCityDisplayFormIdentifier = 'label.restaurantlocation.locat
 export const locationIdAttributeIdentifier = 'attr.restaurantlocation.locationid';
 export const locationNameAttributeUri = `/gdc/md/${demoProjectId}/obj/2204`;
 export const locationNameDisplayFormIdentifier = 'label.restaurantlocation.locationname';
-export const locationResortIdentifier = 'label.restaurantlocation.locationresort';
+export const locationResortIdentifier = 'label.activity.activitytype';
 export const locationStateAttributeIdentifier = 'attr.restaurantlocation.locationstate';
 export const locationStateAttributeUri = `/gdc/md/${demoProjectId}/obj/2210`;
 export const locationStateAttributeCaliforniaUri = `/gdc/md/${demoProjectId}/obj/2210/elements?id=6340116`;
@@ -55,6 +55,6 @@ export const monthDateIdentifier = 'date.abm81lMifn6q';
 export const monthDateIdentifierJanuary = `/gdc/md/${demoProjectId}/obj/2071/elements?id=1`;
 export const numberOfChecksIdentifier = 'aeOt50ngicOD';
 export const tableVisualizationIdentifier = 'aatFRvXBdilm';
-export const totalSalesIdentifier = 'aa7ulGyKhIE5';
+export const totalSalesIdentifier = 'acKjadJIgZUN';
 export const numberOfRestaurantsIdentifier = 'aawAq8YqhM3o';
 export const averageRestaurantDailyCostsIdentifier = 'aaQJzQzoeKwZ';

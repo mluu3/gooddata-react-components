@@ -2,6 +2,10 @@
 import React from 'react';
 
 import ExampleWithSource from '../components/utils/ExampleWithSource';
+
+import TestTableExample from '../components/TestTableExample';
+import TestTableExampleSRC from '!raw-loader!../components/TestTableExample'; // eslint-disable-line import/no-webpack-loader-syntax, import/
+
 import PivotTableDrillExample from '../components/PivotTableDrillExample';
 import PivotTableDrillExampleSRC from '!raw-loader!../components/PivotTableDrillExample'; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved, import/extensions, import/first
 import PivotTableSortingExample from '../components/PivotTableSortingExample';
@@ -13,6 +17,18 @@ import PivotTableTotalsExampleSRC from '!raw-loader!../components/PivotTableTota
 export const PivotTableDemo = () => (
     <div>
         <h1>Pivot Table</h1>
+
+        <hr className="separator" />
+
+        <h2 id="test">
+            Test Table
+        </h2>
+        <ExampleWithSource
+            for={() => (
+                <TestTableExample />
+            )}
+            source={TestTableExampleSRC}
+        />
 
         <hr className="separator" />
 
