@@ -11,7 +11,7 @@ import VisualizationColumnChartExampleSRC from '!raw-loader!../components/Visual
 import VisualizationTableExampleSRC from '!raw-loader!../components/VisualizationTableExample'; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved, import/extensions, import/first
 import CustomVisualizationExampleSRC from '!raw-loader!../components/CustomVisualizationExample'; // eslint-disable-line import/no-webpack-loader-syntax, import/no-unresolved, import/extensions, import/first
 
-export const Visualization = () => (
+export const VisualizationByUri = () => (
     <div>
         <h1>Visualization</h1>
 
@@ -35,4 +35,4 @@ export const Visualization = () => (
     </div>
 );
 
-export default Visualization;
+export default VisualizationByUri;
