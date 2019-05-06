@@ -4,10 +4,7 @@ import { Visualization } from "@gooddata/react-components";
 
 import "@gooddata/react-components/styles/css/main.css";
 
-import {
-    columnsVisualizationIdentifier,
-    projectId
-} from "../utils/fixtures";
+import { columnsVisualizationIdentifier, projectId } from "../utils/fixtures";
 import { CUSTOM_COLOR_PALETTE } from "../utils/colors";
 
 const defaultProperties = {};
@@ -47,7 +44,7 @@ export class ConfigurationColumnChartExample extends Component {
             legend: {
                 enabled: customLegendUsed,
                 position: "right",
-            }
+            },
         };
         this.setState({
             config: {
@@ -61,7 +58,9 @@ export class ConfigurationColumnChartExample extends Component {
     onSeparatorChange() {
         const { config: currentConfig, customSeparatorUsed } = this.state;
         const separatorProp = {
-            separators: customSeparatorUsed ? { thousand: '.', decimal: ',' } : { thousand: ',', decimal: '.' }
+            separators: customSeparatorUsed
+                ? { thousand: ".", decimal: "," }
+                : { thousand: ",", decimal: "." },
         };
         this.setState({
             config: {

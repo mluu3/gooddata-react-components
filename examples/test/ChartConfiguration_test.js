@@ -14,7 +14,7 @@ test("should be able to change configuration of bucket component chart and rende
     const legend = Selector(".s-bar-chart .viz-legend");
     const barChart = Selector(".s-bar-chart");
     const tooltip = Selector(".gd-viz-tooltip-table-row .gd-viz-tooltip-table-value");
-   
+
     await t
         .expect(barChart.visible)
         .ok()
@@ -56,8 +56,13 @@ test("should be able to change configuration of bucket component chart and rende
         .click(changePaletteBtn)
         .expect(barChart.visible)
         .ok()
-        .expect(barChart.find(".highcharts-series-1 rect").nth(0).getAttribute("fill"))
-        .eql("rgb(168,194,86)")
+        .expect(
+            barChart
+                .find(".highcharts-series-1 rect")
+                .nth(0)
+                .getAttribute("fill"),
+        )
+        .eql("rgb(168,194,86)");
 });
 
 test("should be able to change configuration of visialization chart and render them", async t => {
@@ -66,8 +71,8 @@ test("should be able to change configuration of visialization chart and render t
     const changeSeparatorBtn = Selector(".s-visualization-column .s-change-separator");
     const legend = Selector(".s-visualization-column .viz-legend");
     const columnChart = Selector(".s-visualization-column");
-    const tooltip = Selector(".gd-viz-tooltip-table-row .gd-viz-tooltip-table-value"); 
-    
+    const tooltip = Selector(".gd-viz-tooltip-table-row .gd-viz-tooltip-table-value");
+
     await t
         .hover(columnChart)
         .expect(columnChart.visible)
@@ -110,6 +115,11 @@ test("should be able to change configuration of visialization chart and render t
         .click(changePaletteBtn)
         .expect(columnChart.visible)
         .ok()
-        .expect(columnChart.find(".highcharts-series-1 rect").nth(0).getAttribute("fill"))
-        .eql("rgb(168,194,86)")
+        .expect(
+            columnChart
+                .find(".highcharts-series-1 rect")
+                .nth(0)
+                .getAttribute("fill"),
+        )
+        .eql("rgb(168,194,86)");
 });

@@ -49,7 +49,7 @@ export class BarChartDynamicExample extends Component {
             legend: {
                 enabled: customLegendUsed,
                 position: "right",
-            }
+            },
         };
         this.setState({
             config: {
@@ -63,7 +63,9 @@ export class BarChartDynamicExample extends Component {
     onSeparatorChange() {
         const { config: currentConfig, customSeparatorUsed } = this.state;
         const separatorProp = {
-            separators: customSeparatorUsed ? { thousand: '.', decimal: ',' } : { thousand: ',', decimal: '.' }
+            separators: customSeparatorUsed
+                ? { thousand: ".", decimal: "," }
+                : { thousand: ",", decimal: "." },
         };
         this.setState({
             config: {

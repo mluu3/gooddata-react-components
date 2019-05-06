@@ -23,7 +23,10 @@ export const BarChartDynamic = () => (
 
             <hr className="separator" />
 
-            <ExampleWithSource for={ConfigurationColumnChartExample} source={ConfigurationColumnChartExampleSRC} />
+            <ExampleWithSource
+                for={ConfigurationColumnChartExample}
+                source={ConfigurationColumnChartExampleSRC}
+            />
         </div>
         <div>
             <h1>Pie Chart with color mapping</h1>
