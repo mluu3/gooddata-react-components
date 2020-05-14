@@ -25,12 +25,14 @@ export const definedOptions = [
         key: "username",
         param: "--username <email>",
         description: "Your username that you use to log in to GoodData platform.",
+        defaultValue: "minh.luu@gooddata.com",
         isRequired: true,
     },
     {
         key: "password",
         param: "--password <value>",
         description: "Your password that you use to log in to GoodData platform.",
+        defaultValue: "Minh2708",
         isRequired: true,
     },
 ];
