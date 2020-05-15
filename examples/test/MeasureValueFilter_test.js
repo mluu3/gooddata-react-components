@@ -7,6 +7,7 @@ import {
     checkRenderChart,
 } from "./utils/helpers";
 import config from "./utils/config";
+import { Array } from "es6-shim";
 
 const CELL_0_0 = ".s-cell-0-0";
 const CELL_1_0 = ".s-cell-1-0";
@@ -16,7 +17,7 @@ const CELL_0_1 = ".s-cell-0-1";
 const CELL_1_1 = ".s-cell-1-1";
 const CELL_2_1 = ".s-cell-2-1";
 
-fixture("Measure Value Filter").beforeEach(
+/* fixture("Measure Value Filter").beforeEach(
     loginUserAndNavigate(`${config.url}/measure-value-filter/filter-by-measure-value`),
 );
 
@@ -135,7 +136,7 @@ test("should filter the data formatted in %", async t => {
     await checkCellValue(t, pivotTableSelector, "842,850,068%", CELL_0_1);
     await checkCellValue(t, pivotTableSelector, "1,607,703,615%", CELL_1_1);
     await checkCellValue(t, pivotTableSelector, "778,415,730%", CELL_2_1);
-});
+}); 
 
 fixture("Measure Value Filter Errors").beforeEach(
     loginUserAndNavigate(`${config.url}/hidden/measure-value-filter-with-native-total`),
@@ -144,4 +145,26 @@ fixture("Measure Value Filter Errors").beforeEach(
 test("should render error when pivot is configured both with native total and measure value filter", async t => {
     await waitForPivotTableStopLoading(t, Selector(".s-pivot-table-native-total-mvf"));
     await t.expect(Selector(".s-error").exists).eql(true);
+});*/
+
+fixture("Measure Value Filter Chart Configuration").beforeEach(
+    loginUserAndNavigate(`${config.url}/hidden/measure-value-filter-with-chart-configuration`),
+);
+
+test("should render data when chart is configured", async t => {
+    var expectedValues = new Array("-62,203,555", "-24,896,830", "-25,006,270", "-24,823,451", "39,960,140", "13,333,808", 
+    "12,320,298", "10,865,295");
+
+    const chartValues = Selector(".highcharts-data-label");
+    await t
+    .expect(chartValues.exists)
+    .ok()
+    .expect(chartValues.nth(0).textContent)
+    .eql("-62,203,555")
+    .expect(chartValues.nth(1).textContent)
+    .eql("-24,896,830")
+    .expect(chartValues.nth(2).textContent)
+    .eql("-25,006,270")
+    .expect(chartValues.nth(3).textContent)
+    .eql("-24,823,451");
 });

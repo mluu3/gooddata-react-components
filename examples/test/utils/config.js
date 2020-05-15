@@ -1,4 +1,4 @@
-// (C) 2007-2019 GoodData Corporation
+// (C) 2007-2020 GoodData Corporation
 import { existsSync, readFileSync } from "fs";
 import * as path from "path";
 import program from "commander";
@@ -25,14 +25,12 @@ export const definedOptions = [
         key: "username",
         param: "--username <email>",
         description: "Your username that you use to log in to GoodData platform.",
-        defaultValue: "minh.luu@gooddata",
         isRequired: true,
     },
     {
         key: "password",
         param: "--password <value>",
         description: "Your password that you use to log in to GoodData platform.",
-        defaultValue: "Minh2708",
         isRequired: true,
     },
 ];

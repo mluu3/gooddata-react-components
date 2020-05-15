@@ -20,7 +20,7 @@ async function checkRenderedChart(selector, t) {
         .ok();
 }
 
-test("Chart visualization should render", async t => {
+/* test("Chart visualization should render", async t => {
     const chart = Selector(".s-visualization-chart svg"); // could need timeout ie 20 secs to work
     await t
         .expect(chart.exists)
@@ -96,4 +96,17 @@ test("Heatmap should render", async t => {
 
 test("GeoPushpinChart should render", async t => {
     await checkRenderedChart(".s-visualization-geo-pushpin", t);
+}); */
+
+test("Measure value filter should render", async t => {
+    const chartValues = Selector(
+        "#measure-value-filter-column-chart ~ div .s-visualization-chart .highcharts-data-label",
+    );
+    await t
+        .expect(chartValues.exists)
+        .ok()
+        .expect(chartValues.nth(0).textContent)
+        .eql("53,986,994.50")
+        .expect(chartValues.nth(1).textContent)
+        .eql("57,264,327.95");
 });
